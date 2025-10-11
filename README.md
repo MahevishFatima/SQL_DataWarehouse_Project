@@ -11,75 +11,98 @@ This project showcases how to design, build, and document a complete **data ware
 
 <img width="867" height="605" alt="image" src="https://github.com/user-attachments/assets/56ecc5de-2835-4bdb-905a-5c322e61f0a8" />
 
+---
 
-## 📖 Project Description
-In this project, I designed and implemented a **three-tiered data warehouse** based on industry best practices.  
-The architecture follows the **Bronze–Silver–Gold** data layering model:
+## 📖 Project Overview
+This project involves:  
 
-### 🥉 Bronze Layer
-- **Purpose:** Store raw data as received from source systems.  
-- **Object Type:** Table  
-- **Load Type:** Batch (Full Load)  
-- **Transformations:** None  
-- **Data Model:** None (as-is)
+- 🏗️ **Data Architecture:** Designing a Modern Data Warehouse using the **Medallion Architecture (Bronze, Silver, and Gold layers)**.  
+- ⚙️ **ETL Pipelines:** Extracting, transforming, and loading data from source systems into the warehouse.  
+- 📊 **Data Modeling:** Developing **fact and dimension tables** optimized for analytical queries.  
+- 📈 **Analytics & Reporting:** Creating **SQL-based reports** and dashboards for actionable insights.  
 
-### 🥈 Silver Layer
-- **Purpose:** Contain cleaned, standardized, and validated data.  
-- **Object Type:** Table   
-- **Load Type:** Batch (Full Load)  
-- **Transformations:** Cleaning, Standardization, Normalization, Enrichment, Derived Columns
-- **Data Model:** None (as-is)  
-
-### 🥇 Gold Layer
-- **Purpose:** Provide business-ready, aggregated data for analytics.  
-- **Object Type:** Views  
-- **No Load **   
-- **Transformations:** Integration, Aggregations, Joins, Business Logic  
-- **Data Model:** Star Schema (Dimensional (Facts & Dimensions)), Aggregated Tables
-
-The **Consumer Layer** serves BI and analytics tools like **Power BI**, **Tableau**, or **direct SQL queries** for ad-hoc analysis and machine learning use cases.
+🎯 This repository is an excellent resource for professionals and students looking to showcase expertise in:  
+- SQL Development  
+- Data Architecture  
+- Data Engineering  
+- ETL Pipeline Development  
+- Data Modeling  
+- Data Analytics  
 
 ---
 
-## 🧩 Data Modeling
-To organize and optimize data, two popular schema designs were implemented:
+## 🛠️ Important Links & Tools
+Everything used here is **free** and beginner-friendly:  
 
-### ⭐ Star Schema
-A simple, denormalized structure where fact tables connect to dimension tables.  
-- Fast querying  
-- Ideal for dashboards & reports  
-- Easy to understand for business users  
-
-### ❄️ Snowflake Schema
-A normalized version of the star schema where dimensions are broken into sub-dimensions.  
-- Reduces redundancy  
-- Improves data integrity  
-- Better for complex analytical systems  
-
-These schemas are essential in **data warehousing** to represent **fact and dimension tables** — enabling efficient reporting, metrics tracking, and BI insights.
+- **Datasets:** Access to the project datasets (CSV files).  
+- **SQL Server Express:** Lightweight database server for hosting your SQL database.  
+- **SQL Server Management Studio (SSMS):** GUI for managing and querying your databases.  
+- **GitHub Repository:** For version control and collaboration.  
+- **Draw.io:** Design your data architecture diagrams, data models, and process flows.  
+- **Notion:** Manage project documentation and access the full project template & task list.  
 
 ---
 
-## 🧠 Key Concepts Covered
-- Data Warehouse Fundamentals  
-- ETL (Extract, Transform, Load) Concepts  
-- Data Modeling (Star & Snowflake)  
-- Layered Architecture Design (Bronze–Silver–Gold)  
-- SQL Server Implementation  
-- Visualization Integration (Power BI / Tableau)
+## 🚀 Project Requirements  
+
+### 🧱 Building the Data Warehouse (Data Engineering)  
+
+**Objective:**  
+Develop a **modern data warehouse** using SQL Server to consolidate **sales data**, enabling analytical reporting and informed decision-making.  
+
+**Specifications:**  
+- **Data Sources:** Import data from two systems — ERP and CRM — provided as CSV files.  
+- **Data Quality:** Cleanse and resolve inconsistencies before loading data.  
+- **Integration:** Combine both sources into a single, user-friendly analytical model.  
+- **Scope:** Focus on the latest dataset only (no historization required).  
+- **Documentation:** Provide clear data model documentation for both technical and business users.  
 
 ---
 
-## ⚙️ Project Requirements
-To build or run this project, you’ll need:
+### 📊 BI: Analytics & Reporting (Data Analysis)  
 
-- **SQL Server Express**  
-- **SQL Server Management Studio (SSMS)** 
-- **Draw.io** (for architecture diagrams)
-- **Notion** Get the Project Template from Notion
-- **[Notion Project Steps](https://www.notion.so/SQL-Data-Warehouse-Project-2885f89bd8bf800686b4ea4a65137eb7?source=copy_link)** Access to All Project Phases and Tasks.
-- **Power BI / Tableau** (optional for visualization)  
-- Basic understanding of SQL & data modeling  
+**Objective:**  
+Develop SQL-based analytics to deliver insights into:  
+- Customer Behavior  
+- Product Performance  
+- Sales Trends  
+
+These insights enable stakeholders to make **data-driven business decisions** based on reliable, consolidated data.  
+
+📁 For more details, refer to:  
+`docs/requirements.md`  
+
+---
+
+## 🧩 Data Architecture Design  
+
+The data warehouse follows the **Medallion Architecture**, consisting of three structured layers:  
+
+### 🥉 Bronze Layer  
+- **Stores:** Raw data as received from source systems.  
+- **Purpose:** Preserve original data for auditing and recovery.  
+
+### 🥈 Silver Layer  
+- **Stores:** Cleaned and standardized data.  
+- **Purpose:** Apply transformations, deduplication, and normalization.  
+
+### 🥇 Gold Layer  
+- **Stores:** Aggregated, business-ready data.  
+- **Purpose:** Enable advanced analytics, dashboards, and reporting.  
+
+---
+
+## 💡 Data Modeling  
+
+### ⭐ Star Schema  
+A **denormalized** model with a central **Fact Table** surrounded by **Dimension Tables**.  
+- Simple and fast for querying and reporting.  
+- Ideal for dashboards and KPIs.  
+
+### ❄️ Snowflake Schema  
+A **normalized** extension of the star schema.  
+- Reduces redundancy and improves data integrity.  
+- Suitable for complex analytical systems.  
 
 ---
 
@@ -88,6 +111,12 @@ A huge **thank you to [Data with Baraa](https://www.youtube.com/@DataWithBaraa)*
 for his amazing educational content and walkthroughs on data engineering and SQL warehouse projects.  
 His videos played a major role in helping me understand and structure this entire project step by step.  
 This project is inspired by his teachings and adapted to strengthen my hands-on data engineering skills.  
+
+---
+
+## 🛡️ License  
+This project is licensed under the **MIT License**.  
+You are free to use, modify, and share this project with proper attribution.  
 
 ---
 
