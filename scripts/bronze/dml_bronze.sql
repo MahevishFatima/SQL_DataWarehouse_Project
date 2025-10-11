@@ -21,7 +21,8 @@
 -- ================================================================
 -- CRM: Customer Info
 -- ================================================================
-USE DataWareHouse;
+CREATE OR ALTER PROCEDURE bronze.load_bronze AS
+BEGIN
 
 -- Empty the table before loading fresh data
 TRUNCATE TABLE bronze.crm_cust_info;
@@ -118,6 +119,8 @@ WITH (
 
 SELECT * FROM bronze.erp_px_cat_g1v2;
 SELECT COUNT(*) FROM bronze.erp_px_cat_g1v2;
+
+END
 
 -- ================================================================
 -- IMPORTANT NOTE:
