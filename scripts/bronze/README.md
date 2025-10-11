@@ -2,117 +2,67 @@
 
 <img width="1166" height="235" alt="image" src="https://github.com/user-attachments/assets/c1a2fbab-0ddd-4636-83dc-7cff888cf8c0" />
 
-## 🔍 Step 1: Analysis — Understanding the Source Systems
+## 🔍 Step 1: Analysis — Understanding the Source System
 
-Before writing any code, the first step in developing the **Bronze Layer** is **analysis** — understanding the source systems we will connect to the data warehouse.
+Before developing the Bronze Layer, the first and most important step is **analysis**.  
+You don’t immediately start writing code — instead, you must first **understand the source system** you are connecting to the data warehouse.
 
-As a Data Architect or Engineer, you don’t jump straight into coding; you first **interview the source system experts** to learn about the system’s nature, data structure, and technical setup.
+### 🎯 Purpose
 
-This phase ensures you can design robust ingestion scripts and avoid data integration issues later.
+To gain a deep understanding of:
 
----
+- The nature and structure of the source system.  
+- How data is generated, stored, and accessed.  
+- The best way to extract and load it into the data warehouse.
 
-### 🗣️ Questions to Ask During Source System Analysis
+### 🗣️ Approach
 
-#### 1. Understanding the Business Context & Ownership
-- What’s the story behind this data?  
-- Who owns the data — which IT department or business unit?  
-- What business process does it support (Customer Transactions, Supply Chain, Logistics, Finance, etc.)?  
+The Data Engineer or Architect should **interview the source system experts** and ask multiple questions to learn:
 
-> 🧠 *This helps identify data importance, responsibility, and usage scope.*
+- What kind of system it is (CRM, ERP, etc.)  
+- What data formats it uses.  
+- How frequently the data changes.  
+- What access or security constraints exist.  
 
-#### 2. System and Data Documentation
-- Is there any existing data documentation or data catalog?  
-- Are there column descriptions, table definitions, or entity-relationship diagrams?  
-
-> 🧩 *Having these documents saves a lot of time during modeling and ETL design.*
-
-#### 3. Source Data Model
-- How is the data structured in the source system?  
-- What are the key relationships between tables?  
-- Are there primary/foreign keys, constraints, or hierarchies?  
-
-> 🧱 *Understanding this helps define joins and transformations correctly.*
+This step helps avoid integration issues and ensures efficient ETL pipeline design.
 
 ---
 
-## ⚙️ Step 2: Technical Understanding — Architecture & Technology Stack
+## ⚙️ Step 2: Data Ingestion — Connecting Source to Data Warehouse
 
-Once you know the business context, dive into the **technical side**.
+Once the source systems are well-understood, the next focus is **data ingestion**.  
+This means **building the bridge** between the source system and the data warehouse.
 
-### Key Questions to Discuss with Source Experts
+### 🧩 Key Objective
 
-#### 🔸 Data Storage & Hosting
-- Is the data **on-premises** (SQL Server, Oracle, etc.) or **cloud-based** (Azure, AWS, etc.)?
+- Load data from the source into the **Bronze Layer**.  
+- Preserve the data **exactly as it exists in the source system** (no transformations).
 
-#### 🔸 Integration Capabilities
-- How can we access the data?  
-  - APIs?  
-  - Kafka streams?  
-  - File extractions (CSV, JSON, etc.)?  
-  - Direct database connection?
-
-> 🧭 *Understanding this determines the ETL approach.*
-
-#### 🔸 Data Extraction Strategy
-- Will the data be **fully reloaded (Full Load)** or **incrementally loaded (Incremental Load)**?  
-- What is the expected **data volume** — MBs, GBs, or TBs?  
-- Are there any **performance limitations** on the source system during extraction?  
-
-> ⚠️ *Older systems might struggle with large data loads — be mindful of system performance impact.*
-
-#### 🔸 Data Retention & History
-- Do we need all historical data, or just a recent range (e.g., last 10 years)?  
-- Does the source system already maintain historical data, or do we handle it in the data warehouse?
-
-#### 🔸 Authentication & Authorization
-- How will we access the source system?  
-  - Username/password?  
-  - API tokens or access keys?  
-  - Certificates or OAuth?  
-
-> 🔐 *Ensure security and access control are properly handled.*
+The Bronze Layer serves as the **raw data zone**, capturing all incoming data in its original form.
 
 ---
 
-## 🧩 Step 3: Data Ingestion — Loading into the Bronze Layer
+## 🧪 Step 3: Data Validation — Ensuring Data Quality
 
-Once the analysis is complete and the access method is clear, we move to **data ingestion** — building a bridge between the source system and the data warehouse.
+Once data ingestion scripts are ready and data is loaded, it’s time for **quality control**.
 
-### 🎯 Objective
-Load **raw source data exactly as it is** into the **Bronze Layer** of the Data Warehouse.
+### ✅ Validation Steps
 
-### 🧠 Key Specifications for the Bronze Layer
+**Data Completeness Check:**  
+Compare the number of records between the source system and the Bronze Layer.  
+This ensures that no data has been lost during ingestion.
 
-| Aspect | Description |
-|--------|--------------|
-| **Purpose** | Store raw data from the source systems. |
-| **Loading Type** | Full Load (truncate and reload each time). |
-| **Transformations** | None — data remains exactly as in the source. |
-| **Modeling** | None — no joins or data modeling yet. |
-| **Validation** | Ensure data completeness and schema correctness. |
-| **Documentation** | Every table and column must be documented. |
-| **Version Control** | Commit all scripts to Git regularly. |
+**Schema Check:**  
+Validate that the table structure, column order, and data types match exactly between the source and the Bronze Layer.  
+This ensures that data has landed correctly and maintains consistency.
 
 ---
 
-### ✅ Data Validation
+## 🧾 Step 4: Documentation & Version Control
 
-Once data is loaded:
-- Compare **record counts** between the source and the Bronze Layer to confirm completeness.  
-- Verify **schema structure** — column order, data types, and naming consistency.
+After successful ingestion and validation:
 
----
+- **Document** all details — source connections, table mappings, and validation results.  
+- **Commit** the scripts and documentation to **Git** for version control and collaboration.
 
-## 💻 Step 4: Building the Bronze Layer Tables
-
-Before writing the **DDL (Data Definition Language)** scripts, explore the metadata and structure of incoming data.
-
-You can either:
-- Consult **technical documentation**, or  
-- Inspect the **source files (e.g., CSVs)** to infer column names and data types.
-
----
-
-📘 *This structured approach ensures that your Bronze Layer is reliable, auditable, and serves as a strong foundation for Silver and Gold layers in your data warehouse.*
-
+> 🧠 Good documentation and versioning ensure your work is **traceable**, **maintainable**, and **reproducible**.
