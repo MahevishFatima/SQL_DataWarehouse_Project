@@ -25,17 +25,17 @@ The architecture follows the **Bronze–Silver–Gold** data layering model:
 
 ### 🥈 Silver Layer
 - **Purpose:** Contain cleaned, standardized, and validated data.  
-- **Object Type:** Table / View  
-- **Load Type:** Incremental / Scheduled Batch  
-- **Transformations:** Cleaning, Standardization, Deduplication  
-- **Data Model:** Normalized  
+- **Object Type:** Table   
+- **Load Type:** Batch (Full Load)  
+- **Transformations:** Cleaning, Standardization, Normalization, Enrichment, Derived Columns
+- **Data Model:** None (as-is)  
 
 ### 🥇 Gold Layer
 - **Purpose:** Provide business-ready, aggregated data for analytics.  
-- **Object Type:** Star / Snowflake Schema  
-- **Load Type:** Incremental  
-- **Transformations:** Aggregations, Joins, Business Logic  
-- **Data Model:** Dimensional (Facts & Dimensions)
+- **Object Type:** Views  
+- **No Load **   
+- **Transformations:** Integration, Aggregations, Joins, Business Logic  
+- **Data Model:** Star Schema (Dimensional (Facts & Dimensions)), Aggregated Tables
 
 The **Consumer Layer** serves BI and analytics tools like **Power BI**, **Tableau**, or **direct SQL queries** for ad-hoc analysis and machine learning use cases.
 
@@ -73,20 +73,21 @@ These schemas are essential in **data warehousing** to represent **fact and dime
 ## ⚙️ Project Requirements
 To build or run this project, you’ll need:
 
-- **SQL Server** (or any RDBMS supporting T-SQL)  
-- **SQL Server Management Studio (SSMS)** or **Azure Data Studio**  
-- **FlatIcon** (for architecture icons)  
-- **Draw.io / Lucidchart** (for architecture diagrams)  
+- **SQL Server Express**  
+- **SQL Server Management Studio (SSMS)** 
+- **Draw.io** (for architecture diagrams)
+- **Notion** Get the Project Template from Notion
+- **[Notion Project Steps](https://www.notion.so/SQL-Data-Warehouse-Project-2885f89bd8bf800686b4ea4a65137eb7?source=copy_link)** Access to All Project Phases and Tasks.
 - **Power BI / Tableau** (optional for visualization)  
 - Basic understanding of SQL & data modeling  
 
 ---
 
-## 💡 Tools & Technologies
-- **Database:** Microsoft SQL Server  
-- **Modeling Tools:** Draw.io, FlatIcon  
-- **Visualization:** Power BI / Tableau  
-- **ETL Processing:** T-SQL Scripts / Stored Procedures  
+## 🙏 A Special Thank You
+A huge **thank you to [Data with Baraa](https://www.youtube.com/@DataWithBaraa)** 🎥  
+for his amazing educational content and walkthroughs on data engineering and SQL warehouse projects.  
+His videos played a major role in helping me understand and structure this entire project step by step.  
+This project is inspired by his teachings and adapted to strengthen my hands-on data engineering skills.  
 
 ---
 
@@ -95,5 +96,5 @@ Hi there! 👋
 I’m a **data enthusiast** passionate about transforming raw information into meaningful insights through **data engineering and analytics**.  
 This project reflects my learning journey into **data warehousing**, **SQL-based ETL**.  
 
-If you found this helpful, feel free to ⭐ star the repo or connect with me on [LinkedIn](#)! 🚀  
+If you found this helpful, feel free to ⭐ star the repo or connect with me on [LinkedIn](https://www.linkedin.com/in/mahevish)! 🚀  
 
