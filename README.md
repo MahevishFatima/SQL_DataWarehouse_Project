@@ -1,15 +1,8 @@
-# Data Warehouse and Analytics Project
-Building a modern data warehouse with SQL Server, including ETL Processes, data modelling and analytics.
-
 # 🏗️ SQL Data Warehouse Project — End-to-End Architecture
 
 ## 👋 Welcome!
 Welcome to my **SQL Data Warehouse Project**!  
 This project showcases how to design, build, and document a complete **data warehouse architecture** using SQL Server — from raw data ingestion to clean, business-ready data layers.
-
----
-
-<img width="867" height="605" alt="image" src="https://github.com/user-attachments/assets/56ecc5de-2835-4bdb-905a-5c322e61f0a8" />
 
 ---
 
@@ -76,6 +69,8 @@ These insights enable stakeholders to make **data-driven business decisions** ba
 
 ## 🧩 Data Architecture Design  
 
+<img width="867" height="605" alt="image" src="https://github.com/user-attachments/assets/56ecc5de-2835-4bdb-905a-5c322e61f0a8" />
+
 The data warehouse follows the **Medallion Architecture**, consisting of three structured layers:  
 
 ### 🥉 Bronze Layer  
@@ -107,10 +102,7 @@ A **normalized** extension of the star schema.
 ---
 
 ## 🙏 A Special Thank You
-A huge **thank you to [Data with Baraa](https://www.youtube.com/@DataWithBaraa)** 🎥  
-for his amazing educational content and walkthroughs on data engineering and SQL warehouse projects.  
-His videos played a major role in helping me understand and structure this entire project step by step.  
-This project is inspired by his teachings and adapted to strengthen my hands-on data engineering skills.  
+A huge **thank you to [Data with Baraa](https://www.youtube.com/@DataWithBaraa)** 🎥  for his amazing educational content and walkthroughs on data engineering and SQL warehouse projects.  His videos played a major role in helping me understand and structure this entire project step by step.  This project is inspired by his teachings and adapted to strengthen my hands-on data engineering skills.  
 
 ---
 
@@ -121,9 +113,7 @@ You are free to use, modify, and share this project with proper attribution.
 ---
 
 ## 🙋 About Me
-Hi there! 👋  
-I’m a **data enthusiast** passionate about transforming raw information into meaningful insights through **data engineering and analytics**.  
-This project reflects my learning journey into **data warehousing**, **SQL-based ETL**.  
+Hi there! 👋  I’m a **data enthusiast** passionate about transforming raw information into meaningful insights through **data engineering and analytics**.  This project reflects my learning journey into **data warehousing**, **SQL-based ETL**.  
 
 If you found this helpful, feel free to ⭐ star the repo or connect with me on [LinkedIn](https://www.linkedin.com/in/mahevish)! 🚀  
 
