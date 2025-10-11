@@ -1,5 +1,7 @@
 # 🥉 Building the Bronze Layer
 
+<img width="1166" height="235" alt="image" src="https://github.com/user-attachments/assets/c1a2fbab-0ddd-4636-83dc-7cff888cf8c0" />
+
 ## 🔍 Step 1: Analysis — Understanding the Source Systems
 
 Before writing any code, the first step in developing the **Bronze Layer** is **analysis** — understanding the source systems we will connect to the data warehouse.
