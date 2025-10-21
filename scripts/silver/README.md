@@ -1,4 +1,4 @@
-# 🪙 Silver Layer — Process Overview
+# ⚙️ Silver Layer — Process Overview
 
 <img width="1165" height="230" alt="image" src="https://github.com/user-attachments/assets/f0a98876-909d-41ef-a146-f49e0d98cf86" />
 
